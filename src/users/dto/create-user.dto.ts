@@ -18,10 +18,10 @@ export class CreateUserDto {
   @ApiProperty({type: 'enum', enum: GenderEnum})
   @IsNotEmpty()
   @Validate(GenderValidator)
-  gender: string;
+  gender: GenderEnum;
 
   @ApiProperty({type: 'enum', enum: UserStatusEnum, default: UserStatusEnum.ACTIVE})
   @IsNotEmpty()
   @Validate(UserStatusValidator)
-  status: string;
+  status: UserStatusEnum;
 }
