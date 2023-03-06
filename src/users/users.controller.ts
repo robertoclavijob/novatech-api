@@ -1,4 +1,5 @@
 import { BadRequestException, Body, Controller, Delete, Get, InternalServerErrorException, Param, Post } from '@nestjs/common';
+import { CreateUserDto } from './dto/create-user.dto';
 
 @Controller('users')
 export class UsersController {
@@ -13,7 +14,7 @@ export class UsersController {
   }
 
   @Post()
-  create(@Body() user: any) {
+  create(@Body() user: CreateUserDto) {
     if (Object.keys(user).length === 0) {
       throw new BadRequestException('The user cannot be empty');
     }
